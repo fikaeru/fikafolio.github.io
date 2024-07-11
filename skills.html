@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+    body {
+        margin: 0;
+        font-family: 'Nunito', sans-serif;
+        background-image: url('IMAGES/bg.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .header {
+        width: 100%;
+        height: 250px; /* Fixed height for the header */
+        overflow: hidden;
+    }
+
+    .header img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensure the image covers the entire header area */
+    }
+
+    .line {
+        height: 20px; /* Increased thickness */
+        background-color: #C3BBF8; /* Updated color */
+        margin: 0;
+    }
+
+    .wrapper {
+        background-color: #C9D1D3;
+        opacity: 0.9;
+        margin: 0 auto 20px;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 1200px;
+        overflow: hidden;
+    }
+
+    .nav {
+        width: 200px;
+        background-color: #7AB6ED;
+        color: white;
+        padding: 20px;
+        box-sizing: border-box;
+        float: left;
+        margin-right: 20px;
+        margin-top: -20px; /* Attach the navigation bar to the line */
+        font-size: 18px; /* Increase font size */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav a {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        margin: 20px 0; /* Increase margin for better spacing */
+        transition: transform 0.3s; /* Smooth scaling effect */
+    }
+
+    .nav a img {
+        width: 50px; /* Set icon width */
+        height: 50px; /* Set icon height */
+        transition: transform 0.3s; /* Smooth scaling effect */
+    }
+
+    .nav a:hover, .nav a:hover img {
+        transform: scale(1.1); /* Scale up the link and the icon */
+    }
+
+    .content {
+        overflow: hidden;
+        text-align: center; /* Center the content */
+    }
+
+    .welcome-image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto -20px; /* Center the image and move it upwards */
+        transition: transform 0.3s; /* Smooth scaling effect */
+    }
+
+    .welcome-image:hover {
+        transform: none; /* Disable scaling effect */
+    }
+
+    h1 {
+        text-align: center; /* Center the h1 text */
+        color: #6BA667; /* Change color to #B0DE9C */
+        margin: 0 0 20px 0;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333; /* Darker text color for titles */
+        margin-bottom: 10px; /* Space between title and columns */
+    }
+
+    p {
+        margin: 0 0 20px 0;
+        text-align: center; /* Center the paragraph text */
+    }
+
+    .columns-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px; /* Gap between columns */
+        margin-top: 20px;
+        text-align: center; /* Center the column content */
+    }
+
+    .column {
+        background-color: #FFFFFF; /* Background color for columns */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Add some shadow for better visibility */
+        text-align: center; /* Center align the content */
+        flex: 1 1 calc(25% - 40px); /* 4 columns layout with gaps */
+        max-width: calc(25% - 40px); /* Max width for 4 columns layout */
+        transition: transform 0.3s; /* Smooth scaling effect */
+    }
+
+    .column:hover {
+        transform: scale(1.1); /* Scale up the column */
+    }
+
+    .column img.icon {
+        width: 60px; /* Set icon width */
+        height: 50px; /* Set icon height */
+        display: block;
+        margin: 0 auto;
+        transition: transform 0.3s; /* Smooth scaling effect */
+    }
+
+    .column img.icon:hover {
+        transform: none; /* Disable scaling effect */
+    }
+
+    .column h3 {
+        font-size: 18px; /* Adjust title font size */
+        margin-bottom: 10px; /* Space between title and icons */
+    }
+
+    .welcome-image {
+        max-width: 100%;
+        width: 600px; /* Set a fixed width */
+        height: auto;
+        display: block;
+        margin: 20px auto; /* Center the images and add margin */
+    }
+
+    .footer {
+        text-align: center; /* Center the GIF */
+        margin-top: 20px;
+    }
+
+    .footer img {
+        width: 100px; /* Set width of GIF */
+        height: auto;
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="IMAGES/header.png" alt="Header Image">
+    </div>
+    <div class="line"></div>
+    <div class="wrapper">
+        <div class="nav">
+            <a href="home.html">
+                <img src="IMAGES/back.png" alt="Back Icon">
+            </a>
+        </div>
+        <div class="content">
+			<img src="IMAGES/skills title.png" alt="Main Picture" class="welcome-image">
+            <h1>My Services</h1> <!-- Added title here -->
+            <div class="columns-container">
+                <div class="column">
+					 <h2>Basic design</h2>
+                    <p>Basic designs ranging from logo making, posters and UI/UX design.</p>
+                    
+                </div>
+                <div class="column">
+                   <h2>Digital marketing/Editing content</h2>
+                    <p>I am moderately good at coming up with ideas for content/executing the said idea. I also have skill in editing videos or pictures for content.</p>
+                </div>
+                <div class="column">
+                    <h2>Animation</h2>
+                    <p>I am good at frame by frame animation.</p>
+                </div>
+            </div>
+
+            
+            <h1>My Skills</h1>
+
+            <div class="columns-container">
+                <div class="column">
+                    <h3>Adobe After Effects</h3>
+                    <img src="IMAGES/ae icon.png" alt="Icon 1" class="icon">
+                    <p>Advanced Beginner</p>
+                </div>
+                <div class="column">
+                    <h3>Adobe Illustrator</h3>
+                    <img src="IMAGES/ai icon.png" alt="Icon 2" class="icon">
+                    <p>Proficient</p>
+                </div>
+                <div class="column">
+                    <h3>Adobe Premiere Pro</h3>
+                    <img src="IMAGES/pr icon.png" alt="Icon 3" class="icon">
+                    <p>Competent</p>
+                </div>
+                <div class="column">
+                    <h3>Adobe Photoshop</h3>
+                    <img src="IMAGES/ps icon.png" alt="Icon 4" class="icon">
+                    <p>Advanced Beginner</p>
+                </div>
+                <div class="column">
+                    <h3>Adobe Animate</h3>
+                    <img src="IMAGES/aa icon.png" alt="Icon 7" class="icon">
+                    <p>Expert</p>
+                </div>
+                <div class="column">
+                    <h3>Figma</h3>
+                    <img src="IMAGES/figma.png" alt="Icon 8" class="icon">
+                    <p>Competent</p>
+                </div>
+                <div class="column">
+                    <h3>Capcut</h3>
+                    <img src="IMAGES/capcut.png" alt="Icon 9" class="icon">
+                    <p>Proficient</p>
+                </div>
+                <div class="column">
+                    <h3>Adobe XD</h3>
+                    <img src="IMAGES/xd icon.png" alt="Icon 10" class="icon">
+                    <p>Competent</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <img src="IMAGES/loading.gif" alt="Loading GIF">
+    </div>
+</body>
+</html>

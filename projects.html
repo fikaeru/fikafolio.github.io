@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+    body {
+        margin: 0;
+        font-family: 'Nunito', sans-serif;
+        background-image: url('IMAGES/bg.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .header {
+        width: 100%;
+        height: 250px; /* Fixed height for the header */
+        overflow: hidden;
+    }
+
+    .header img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensure the image covers the entire header area */
+    }
+
+    .line {
+        height: 20px; /* Increased thickness */
+        background-color: #C3BBF8; /* Updated color */
+        margin: 0;
+    }
+
+    .wrapper {
+        background-color: #C9D1D3;
+        opacity: 0.9;
+        margin: 0 auto 20px;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 1200px;
+        overflow: hidden;
+    }
+
+    .nav {
+        width: 200px;
+        background-color: #7AB6ED;
+        color: white;
+        padding: 20px;
+        box-sizing: border-box;
+        float: left;
+        margin-right: 20px;
+        margin-top: -20px; /* Attach the navigation bar to the line */
+        font-size: 18px; /* Increase font size */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav a {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        margin: 20px 0; /* Increase margin for better spacing */
+        transition: transform 0.3s; /* Smooth scaling effect */
+    }
+
+    .nav a img {
+        width: 50px; /* Set icon width */
+        height: 50px; /* Set icon height */
+        transition: transform 0.3s; /* Smooth scaling effect */
+    }
+
+    .nav a:hover, .nav a:hover img {
+        transform: scale(1.1); /* Scale up the link and the icon */
+    }
+
+    .content {
+        overflow: hidden;
+        text-align: center; /* Center the content */
+    }
+
+    .welcome-image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto -20px; /* Center the image and move it upwards */
+    }
+
+    h1 {
+        text-align: center; /* Center the h1 text */
+        color: #6BA667; /* Change color to #B0DE9C */
+        margin: 0 0 10px 0; /* Reduced bottom margin to 10px */
+    }
+
+    p {
+        margin: 0 0 20px 0;
+        text-align: center; /* Center the paragraph text */
+    }
+
+    .buttons {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .buttons button {
+        margin: 0 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #7AB6ED;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .buttons button:hover {
+        background-color: #5a9bd4;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        cursor: pointer; /* Add pointer cursor to indicate clickability */
+        transition: transform 0.3s;
+        object-fit: cover; /* Ensure images are cropped and cover the space uniformly */
+        height: 200px; /* Set a fixed height to ensure uniformity */
+    }
+
+    .gallery img:hover {
+        transform: scale(1.05); /* Slightly enlarge image on hover */
+    }
+
+    /* Popup Styles */
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        width: 80%;
+        max-width: 600px;
+        max-height: 80%; /* Ensure popup doesn't exceed 80% of the viewport height */
+        overflow-y: auto; /* Add vertical scrollbar if content exceeds popup height */
+        text-align: center; /* Center content */
+    }
+
+    .popup h2 {
+        margin-top: 0;
+    }
+
+    .popup img, .popup video {
+        max-width: 100%;
+        max-height: 50vh; /* Set a maximum height for the image or video */
+        height: auto;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        display: block; /* Ensure images and videos are block elements */
+        margin-left: auto;
+        margin-right: auto; /* Center images and videos */
+    }
+
+    .popup p {
+        margin-bottom: 20px;
+    }
+
+    .popup button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #7AB6ED;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .popup button:hover {
+        background-color: #5a9bd4;
+    }
+
+    .popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+		   .footer {
+        text-align: center; /* Center the GIF */
+        margin-top: 20px;
+    }
+
+    .footer img {
+        width: 100px; /* Set width of GIF */
+        height: auto;
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="IMAGES/header.png" alt="Header Image">
+    </div>
+    <div class="line"></div>
+    <div class="wrapper">
+        <div class="nav">
+            <a href="home.html">
+                <img src="IMAGES/back.png" alt="Back Icon">
+            </a>
+        </div>
+        <div class="content">
+            <div class="buttons">
+                <button onclick="showContent('University Works')">University Works</button>
+                <button onclick="showContent('Personal Works')">Personal Works</button>
+            </div>
+            <h1 id="contentTitle">Select a category</h1>
+            <p>Click on the image to learn more!</p>
+            <div id="galleryContent" class="gallery">
+                <!-- Gallery content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup -->
+    <div class="popup-overlay" id="popupOverlay" onclick="closePopup()"></div>
+    <div class="popup" id="popup">
+        <h2 id="popupTitle"></h2>
+        <img id="popupImage" src="" alt="Popup Image">
+        <video id="popupVideo" controls style="display:none;">
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p id="popupDescription"></p>
+        <button id="popupButton" style="display:none;" onclick="window.location.href='#';">Learn More</button>
+    </div>
+
+    <script>
+    function showContent(title) {
+        document.getElementById('contentTitle').innerText = title;
+        const galleryContent = document.getElementById('galleryContent');
+
+        // Clear existing content
+        galleryContent.innerHTML = '';
+
+        // Image data for each category
+        let images = [];
+        switch(title) {
+            case 'University Works':
+                images = [
+                    { src: 'IMAGES/portfolio/logo final2.png', title: 'Logo design', description: 'Made in Adobe Illustrator. Made for a made up cosmetic company.', showButton: false },
+                    { src: 'IMAGES/portfolio/dfdhsdfs-02.png', title: 'Logo design for T-shirt', description: 'A design made for an event of Gameinc24.', showButton: false },
+                    { src: 'IMAGES/portfolio/trailer.png', title: 'Animated Trailer', description: 'A short trailer made for a game project.', video: 'IMAGES\portfolio\trailer.mp4' },
+                    { src: 'IMAGES/portfolio/WhatsApp Image 2024-06-19 at 23.49.54_c792027e.jpg', title: 'Poster design', description: 'Poster for our small game, Salvadora. Sketched out the composition. I also contributed to the asset making and ideas for the levels!', size: 'medium', showButton: true },
+                    { src: 'IMAGES/portfolio/Media Player 7_10_2024 6_28_04 PM.png', title: 'Short PSA Animation', description: 'A short animation made in Adobe Animate.', video: 'IMAGES/portfolio/animation psa.mp4', showButton: false },
+                    { src: 'IMAGES/portfolio/bird final poster.png', title: 'Poster', description: 'Poster design related to endangered birds. Poster was made on Photoshop.', size: 'medium', showButton: false },
+                    { src: 'IMAGES/portfolio/umar.png', title: 'Short Kids Game', description: 'Provided the illustrations for the game. Illustrations were made on Krita.', showButton: true },
+                    { src: 'IMAGES/portfolio/Untitled - Figma 7_10_2024 8_50_19 PM.png', title: 'Design Mockup', description: 'Design mockup created in Figma.', size: 'medium', showButton: false },
+                    { src: 'IMAGES/portfolio/photo_2024-07-10_21-07-48.jpg', title: 'Social Media Marketing', description: 'Made a couple of TikTok videos for a small business account. The video above is one of the videos I made!', video: 'IMAGES/portfolio/IMG_6952.mp4', showButton: true },
+                    { src: 'IMAGES/portfolio/cutscene.png', title: 'Cutscene Animation', description: 'A cutscene animation made for my game.', video: 'IMAGES\portfolio\first.mp4' },
+                    { src: 'IMAGES/portfolio/BIND POSTER COMPETITION (27 Jul 2023 at 17_23).jpg', title: 'Bime Poster', description: 'Poster designed for a competition.', size: 'medium', showButton: false }
+                ];
+                break;
+           case 'Personal Works':
+   case 'Personal Works':
+    images = [
+        { src: 'IMAGES/portfolio/unimpressed.png', title: 'Unimpressed', description: 'Doodle.', showButton: false },
+        { src: 'IMAGES/portfolio/teto.png', title: 'Teto', description: 'Kasane Teto illustration.', showButton: false },
+        { src: 'IMAGES/portfolio/rinn.png', title: 'Rinn', description: 'Kagamine Rin illustration', showButton: false },
+        { src: 'IMAGES/portfolio/phoses.png', title: 'Phoses', description: 'Phosphophylite illustration.', showButton: false },
+        { src: 'IMAGES/portfolio/oc5.png', title: 'Original character illustration.', description: 'Original character illustration.', showButton: false },
+        { src: 'IMAGES/portfolio/mi.gif', title: 'Random GIF animation', description: 'Short animation.', showButton: false },
+        { src: 'IMAGES/portfolio/parfait cookie.png', title: 'Parfait Cookie', description: 'Illustration of Parfait Cookie from Cookie Run.', showButton: false },
+        { src: 'IMAGES/portfolio/siggwine.png', title: 'Genshin Impact fanart', description: 'Illustration of a character in Genshin Impact.', showButton: false },
+        { src: 'IMAGES/portfolio/you died resize2.png', title: 'You Died', description: 'Edited illustration for my game project.', showButton: false }
+    ];
+    break;
+
+
+                break;
+            default:
+                images = [];
+        }
+
+        // Insert new content
+        images.forEach(imgData => {
+            const img = document.createElement('img');
+            img.src = imgData.src;
+            img.alt = imgData.title;
+            img.onclick = () => showPopup(imgData.src, imgData.title, imgData.description, '#', imgData.video, imgData.showButton);
+            galleryContent.appendChild(img);
+        });
+    }
+
+    function showPopup(imageSrc, title, description, link, videoSrc, showButton) {
+    document.getElementById('popupTitle').innerText = title;
+    document.getElementById('popupDescription').innerText = description;
+    document.getElementById('popupOverlay').style.display = 'block';
+    document.getElementById('popup').style.display = 'block';
+
+    // Show video if it's specified, otherwise show the image
+    if (videoSrc) {
+        document.getElementById('popupImage').style.display = 'none';
+        document.getElementById('popupVideo').style.display = 'block';
+        document.getElementById('popupVideo').src = videoSrc;
+    } else {
+        document.getElementById('popupImage').src = imageSrc;
+        document.getElementById('popupImage').style.display = 'block';
+        document.getElementById('popupVideo').style.display = 'none';
+    }
+
+    // Show or hide the Learn More button based on the showButton parameter
+    if (showButton) {
+        document.getElementById('popupButton').style.display = 'inline-block';
+        // Set the link based on the title
+        switch (title) {
+            case 'Poster design':
+                document.getElementById('popupButton').onclick = function() {
+                    window.location.href = 'https://gameinc24.itch.io/salvadora';
+                };
+                break;
+            case 'Short Kids Game':
+                document.getElementById('popupButton').onclick = function() {
+                    window.location.href = 'https://scratch.mit.edu/projects/953160626/';
+                };
+                break;
+            case 'Social Media Marketing':
+                document.getElementById('popupButton').onclick = function() {
+                    window.location.href = 'https://www.tiktok.com/@cotton.knot_my';
+                };
+                break;
+            default:
+                document.getElementById('popupButton').style.display = 'none';
+        }
+    } else {
+        document.getElementById('popupButton').style.display = 'none';
+    }
+}
+		function closePopup() {
+    document.getElementById('popupOverlay').style.display = 'none';
+    document.getElementById('popup').style.display = 'none';
+    // Reset video src to stop playback
+    document.getElementById('popupVideo').src = '';
+}
+
+
+    </script>
+	 <div class="footer">
+        <img src="IMAGES/loading.gif" alt="Loading GIF">
+    </div>
+</body>
+</html>
